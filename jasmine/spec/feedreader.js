@@ -96,6 +96,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test wil require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        var entry; 
+
          beforeEach(function(done) {
           loadFeed(0, done);
 
@@ -105,7 +107,8 @@ $(function() {
          it('ensures when the loadfeed function is called and takes in at least one entry', function(done){
           //I need to check for at least one single entry, which should be the something greater than 0,
           //that is produced after loadfeed is called.
-          expect($('.entry').length).toBeGreaterThan(0);
+          entry = $('.entry');
+          expect(entry.length).toBeGreaterThan(0);
           done();
          });
     });
@@ -117,27 +120,30 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-    describe('New Feed Selection', function(){
+    describe('Loading the Feeds', function(){
       //we will have to compare initial and new content to see that they actually changed.
-      //we need to store initial value, then current and compare.
+      //we need to store initial value, then current and compare the loadFeed initially and 
+      //when we add content.
       //to make variables accessible we will store them outside ouf the functions
       var initialContent,
-      newContent;
+          newContent;
+      var feed = $('.feed');
 
       beforeEach(function(done){
-        loadFeed(0, done)
-          initialContent = $('.feed').html();
-          });  
+         //store initial content
+        initialContent = feed.html();
+        loadFeed(1, function(){
+          done();
+        });
+      });  
 
-      it('ensures the content actually changes', function(done){
-        var newContent = $('.feed').html();
+
+      it('ensures the content actually changes when loadFeed is called', function(){ 
+        //store new content
+        newContent = feed.html();
         expect(initialContent).not.toBe(newContent);
-        loadFeed(1, done);
-
       });
-
     });
-
 
 
 }());
