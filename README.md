@@ -1,4 +1,4 @@
-This is a web-based application that reads RSS feads. Included in it, is jasmine: a behavior driven testing framework for javascript.
+This is a web-based application that reads RSS feads. Included in it, is jasmine: a behavior driven testing framework for javascript. To see the application open index.html. All tests are in feedreader.js.
 
 The feedreader.js is the file containing all the specs and tests. How do we test things with Jasmine? With matchers. These are key words where one can basically test if a condition exists.
 
