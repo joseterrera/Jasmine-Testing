@@ -32,7 +32,7 @@ $(function() {
     it('should have a URL defined which is not empty', function() {
       allFeeds.forEach(function(feed) {
         expect(feed.url).toBeDefined();
-        expect(feed.url.length).not.toBeNaN();
+        expect(feed.url.length).not.toBe(0);
       })
     });
     /* This is a test that loops through each feed

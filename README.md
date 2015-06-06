@@ -1,17 +1,18 @@
-This is a web-based application that reads RSS feads. Included in it, is jasmine: a behavior driven testing framework for javascript.
+A feed reader web application with tests using jasmine,  a behavior driven testing framework for javascript.
 
-To see the application open index.html in your browser. There is at the bottom of the site all of jasmine tests. There are 7 specs detailing the expectations for each of them. At this point all tests pass. Jasmine would point out if a test doesn't pass.
+To check out this repository:
+* Open index.html in your browser. There is at the bottom of the site all of jasmine tests. There are 7 specs detailing the expectations for each of them. At this point all tests pass. Jasmine would point out if a test doesn't pass.
 
-To check the application's code, open app.js. It's in this file that you can think of new specs to continue testing the application.
+To check out the tests:
+* Open jasmine/spec/feedreader.js.
+The feedreader.js is the file containing all the specs and tests.
 
-All tests are in jasmine/spec/feedreader.js with explanations for each of them.
-
-The feedreader.js is the file containing all the specs and tests. How do we test things with Jasmine? With matchers. These are key words where one can basically test if a condition exists.
+How do we test things with Jasmine? With matchers. These are key words where one can basically test if a condition exists.
 
 for instance:
-// this is a suite:
+// a suite:
 // A suite then contains a bunch of tests that are related to each other. Each suite will have a set of expectations.
-// Each suite begins with the function describe that has 2 parameters: the name of the suite and the function which contains the calls to the expectation methods called Specs.
+// Each suite begins with the function 'describe' that has 2 parameters: the name of the suite and the function which contains the calls to the expectation methods called Specs.
 
 describe("Hello world", function() {
     it("says world", function() {
